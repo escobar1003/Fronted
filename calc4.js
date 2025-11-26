@@ -122,3 +122,56 @@ function mostrarLenguajes() {
   div.innerHTML = `<h3>Lenguajes registrados:</h3><p>${lenguajes.join(', ')}</p>`;
 }
 
+// ✅ FUNCIONES EXTRAS (MISMO ARCHIVO, SIN IMPORT)
+
+function esPrimo(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+function parImpar(n) {
+  return n % 2 === 0 ? "PAR" : "IMPAR";
+}
+
+function esPalindromo(texto) {
+  const limpio = texto.toLowerCase().replace(/\s/g, "");
+  const invertido = limpio.split("").reverse().join("");
+  return limpio === invertido;
+}
+
+// ✅ BOTÓN EXTRA
+function ejecutarExtra() {
+  const opcion = document.getElementById("selopcion").value;
+  const pantalla = document.getElementById("pantalla");
+  const valor = pantalla.innerText.trim();
+
+  let mensaje = "";
+
+  if (opcion === "primo") {
+    let n = parseInt(valor);
+    mensaje = isNaN(n) ? "Ingresa un número" :
+      esPrimo(n) ? "ES primo" : "NO es primo";
+  }
+
+  if (opcion === "par") {
+    let n = parseInt(valor);
+    mensaje = isNaN(n) ? "Número inválido" : "Es " + parImpar(n);
+  }
+
+  if (opcion === "palindromo") {
+    mensaje = esPalindromo(valor)
+      ? "Es palíndromo"
+      : "No es palíndromo";
+  }
+
+  pantalla.innerText = mensaje;
+  pantalla.classList.add("texto");
+  pantalla.dataset.resultado = "true";
+}
+
+
+
+
