@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Inteligente</title>
+  <link rel="stylesheet" href="calc3.css">
+</head>
+<body>
+  <div class="calculadora">
+    <div class="pantalla" id="pantalla" contenteditable="true">0</div>
+
+    <div class="botones">
+      <button class="funcion" onclick="borrarTodo()">C</button>
+      <button class="funcion" onclick="borrarUltimo()">CE</button>
+      <button class="operador" onclick="operar('/')">÷</button>
+      <button class="operador" onclick="operar('*')">x</button>
+
+      <button class="numero" onclick="agregarNumero('7')">7</button>
+      <button class="numero" onclick="agregarNumero('8')">8</button>
+      <button class="numero" onclick="agregarNumero('9')">9</button>
+      <button class="operador" onclick="operar('-')">-</button>
+
+      <button class="numero" onclick="agregarNumero('4')">4</button>
+      <button class="numero" onclick="agregarNumero('5')">5</button>
+      <button class="numero" onclick="agregarNumero('6')">6</button>
+      <button class="operador" onclick="operar('+')">+</button>
+
+      <button class="numero" onclick="agregarNumero('1')">1</button>
+      <button class="numero" onclick="agregarNumero('2')">2</button>
+      <button class="numero" onclick="agregarNumero('3')">3</button>
+      <button class="igual" onclick="calcular()">=</button>
+
+      <button class="numero cero" onclick="agregarNumero('0')">0</button>
+      <button class="numero" onclick="agregarNumero('.')">.</button>
+    </div>
+
+    <div style="margin-top:15px; display:flex; gap:10px;">
+      <button class="operador" onclick="agregarLenguaje()" style="width:100%; border-radius:20px;">Agregar Lenguaje</button>
+      <button class="operador" onclick="mostrarLenguajes()" style="width:100%; border-radius:20px;">Mostrar Lenguajes</button>
+    </div>
+
+    <div id="resultadoBusqueda" style="margin-top:20px; font-size:14px;"></div>
+    <div id="listaLenguajes" style="margin-top:10px; font-size:14px;"></div>
+  </div>
+
+  <script src="calc3.js"></script>
+</body>
+</html>
+
+calculadora html
